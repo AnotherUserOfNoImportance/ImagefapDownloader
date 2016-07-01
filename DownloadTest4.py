@@ -23,7 +23,6 @@ def getGalleryList():
             url = "http://www.imagefap.com/pictures/"
             galleryId = queryGalleryId.findall(choice)[0]
             url = url + galleryId + "/?gid={}&view=2".format(galleryId)
-            print(url)
             galleryList.append(url)
 
 def loadGalleryPage():
@@ -81,7 +80,6 @@ def findImageUrl():
             result = result.replace("['","{")
             result = result.replace("']","}")
             result = eval(result)
-            print(result)
             imageUrl.append(result["contentUrl"])
         print("The following files have been queued for download:")
         for url in imageUrl:
